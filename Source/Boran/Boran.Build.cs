@@ -29,18 +29,6 @@ public class Boran : ModuleRules
 			"Boran",
 			"Boran/Variant_Strategy",
 			"Boran/Variant_Strategy/UI",
-			"Boran/Variant_TwinStick",
-			"Boran/Variant_TwinStick/AI",
-			"Boran/Variant_TwinStick/Gameplay",
-			"Boran/Variant_TwinStick/UI"
 		});
-
-		// Uncomment if you are using Slate UI
-		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
-
-		// Uncomment if you are using online features
-		// PrivateDependencyModuleNames.Add("OnlineSubsystem");
-
-		// To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true
 	}
 }
