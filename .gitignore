@@ -1,0 +1,15 @@
+/Build
+/Intermediate
+/Saved
+/Backup
+/Binaries
+
+/.idea/*
+/.vs/*
+/DerivedDataCache/*
+
+*.old
+*.sln
+*.v2
+*.vsidx
+*.ipch
