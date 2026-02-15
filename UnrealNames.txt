@@ -1,0 +1,106 @@
+Category         | Asset Type                          | Prefix     | Suffix       | Example
+-----------------|-------------------------------------|------------|--------------|-------------------------
+AI               | AI Controller                       | AIC_       |              | AIC_Example
+AI               | Behavior Tree                       | BT_        |              | BT_Example
+AI               | Blackboard                          | BB_        |              | BB_Example
+AI               | Decorator                           | BTD_       |              | BTD_Example
+AI               | Environment Query                   | EQS_       |              | EQS_Example
+AI               | Environment Query Context           | EQS_       | _Context     | EQS_Example_Context
+AI               | Service                             | BTS_       |              | BTS_Example
+AI               | Task                                | BTT_       |              | BTT_Example
+Animation        | Aim Offset                          | AO_        |              | AO_Example
+Animation        | Aim Offset 1D                       | AO_        |              | AO_Example
+Animation        | Animation Blueprint                 | ABP_       |              | ABP_Example
+Animation        | Animation Composite                 | AC_        |              | AC_Example
+Animation        | Animation Montage                   | AM_        |              | AM_Example
+Animation        | Animation Notify                    | AN_        |              | AN_Example
+Animation        | Animation Sequence                  | AS_        |              | AS_Example
+Animation        | Blend Space                         | BS_        |              | BS_Example
+Animation        | Blend Space 1D                      | BS_        |              | BS_Example
+Animation        | Level Sequence                      | LS_        |              | LS_Example
+Animation        | Morph Target                        | MT_        |              | MT_Example
+Animation        | Paper Flipbook                      | PFB_       |              | PFB_Example
+Animation        | Rig                                 | Rig_       |              | Rig_Example
+Animation        | Skeletal Mesh                       | SK_        |              | SK_Example
+Animation        | Skeleton                            | SKEL_      |              | SKEL_Example
+Audio            | Attenuation                         |            | _ATT         | Example_ATT
+Audio            | Dialogue Voice                      | DV_        |              | DV_Example
+Audio            | Dialogue Wave                       | DW_        |              | DW_Example
+Audio            | Media Sound Wave                    | MSW_       |              | MSW_Example
+Audio            | Reverb Effect                       | Reverb_    |              | Reverb_Example
+Audio            | Sound Attenuation                   | ATT_       |              | ATT_Example
+Audio            | Sound Concurrency                   |            | _SC          | Example_SC
+Audio            | Sound Cue                           | A_         | _Cue         | A_Example_Cue
+Audio            | Sound Mix                           | Mix_       |              | Mix_Example
+Audio            | Sound Wave                          | A_         |              | A_Example
+Audio            | Soundscape Color                    | SC_        |              | SC_Example
+Audio            | Soundscape Palette                  | SP_        |              | SP_Example
+Blueprint        | Blueprint                           | BP_        |              | BP_Example
+Blueprint        | Blueprint Component                 | BP_        | *            | BP_Example_AC
+Blueprint        | Blueprint Function Library          | BPFL_      |              | BPFL_Example
+Blueprint        | Blueprint Interface                 | BPL        |              | BPL_Example
+Blueprint        | Blueprint Macro Library             | BPML_      |              | BPML_Example
+Blueprint        | Enumerator                          | E          |              | EExample
+Blueprint        | Structure                           | S          |              | SExample
+Blueprint        | Tutorial Blueprint                  | TBP_       |              | TBP_Example
+Datasmith        | Dataprep Asset                      | DPA_       |              | DPA_Example
+Enhanced Input   | Input Action                        | IA_        |              | IA_Example
+Enhanced Input   | Input Mapping Context               | IMC_       |              | IMC_Example
+Gameplay         | Ability Set                         | AS_        |              | AS_Example
+Gameplay         | Game Phase Abilities                | Phase_     |              | Phase_Example
+Gameplay         | Gameplay Abilities                  | GA_        |              | GA_Example
+Gameplay         | Gameplay Cue Notifies               | GCN_       |              | GCN_Example
+Gameplay         | Latent Gameplay Cue Notifies        | GCNL_      |              | GCNL_Example
+Gameplay         | Gameplay Effects                    | GE_        |              | GE_Example
+Material         | Texture			                   | T_        	|              | T_Example
+Material         | Material                            | M_         |              | M_Example
+Material         | Material (Decal)                    | M_         | _Decal       | M_Example_Decal
+Material         | Material (Light Function)           | M_         | _LF          | M_Example_LF
+Material         | Material (Post Process)             | M_         | _PP          | M_Example_PP
+Material         | Material (User Interface)           | M_         | _UI          | M_Example_UI
+Material         | Material (Volume)                   | M_         | _Vol         | M_Example_Vol
+Material         | Material Function                   | MF_        |              | MF_Example
+Material         | Material Instance                   | MI_        |              | MI_Example
+Material         | Material Instance (Decal)           | MI_        | _Decal       | MI_Example_Decal
+Material         | Material Instance (Light Function)  | MI_        | _LF          | MI_Example_LF
+Material         | Material Instance (Post Process)    | MI_        | _PP          | MI_Example_PP
+Material         | Material Instance (User Interface)  | MI_        | _UI          | MI_Example_UI
+Material         | Material Instance (Volume)          | MI_        | _Vol         | MI_Example_Vol
+Material         | Material Parameter Collection       | MPC_       |              | MPC_Example
+Material         | Subsurface Profile                  | SP_        |              | SP_Example
+Misc             | Animated Vector Field               | VFA_       |              | VFA_Example
+Misc             | Blink Media Player                  | BMP_       |              | BMP_Example
+Misc             | Camera Anim                         | CA_        |              | CA_Example
+Misc             | Chooser Table                       | CHT_       |              | CHT_Example
+Misc             | Color Curve                         | Curve_     | _Color       | Curve_Example_Color
+Misc             | Curve Atlas                         | Curve_     | _Atlas       | Curve_Example_Atlas
+Misc             | Curve Table                         | Curve_     | _Table       | Curve_Example_Table
+Misc             | Data Asset                          | DA_*       |              | DA_Weapon_Example
+Misc             | Data Registry                       | DR_        |              | DR_Example
+Misc             | Data Table                          | DT_        |              | DT_Example
+Misc             | File Media Source                   | FMS_       |              | FMS_Example
+Misc             | Foliage Type                        | FT_        |              | FT_Example
+Misc             | Force Feedback Effect               | FFE_       |              | FFE_Example
+Misc             | Landscape Grass Type                | LG_        |              | LG_Example
+Misc             | Landscape Layer                     | LL_        |              | LL_Example
+Misc             | Level                               | L_         |              | L_Example
+Misc             | Level (World Partition)             | L_         | _WP          | L_Example_WP
+Misc             | Level Instance                      | LI_        |              | LI_Example
+Misc             | Media Player                        | MP_        |              | MP_Example
+Misc             | Object Library                      | OL_        |              | OL_Example
+Misc             | Static Mesh                         | SM_        |              | SM_Example
+Misc             | Static Vector Field                 | VF_        |              | VF_Example
+Misc             | Touch Interface Setup               | TL         |              | TL_Example
+Misc             | Vector Curve                        | Curve_     | _Vector      | Curve_Example_Vector
+Niagara          | Niagara Dynamic Input Script        | NDIS_      |              | NDIS_Example
+Niagara          | Niagara Effect Type                 | NET_       |              | NET_Example
+Niagara          | Niagara Emitter                     | NE_        |              | NE_Example
+Niagara          | Niagara Function Script             | NFS_       |              | NFS_Example
+Niagara          | Niagara Module Script               | NMS_       |              | NMS_Example
+Niagara          | Niagara Parameter Collection        | NPC_       |              | NPC_Example
+Niagara          | Niagara Parameter Collection Inst.  | NPCL_      |              | NPCL_Example
+Niagara          | Niagara System                      | NS_        |              | NS_Example
+Paper2D          | Sprite                              | SPR_       |              | SPR_Example
+StateTree        | State Tree                          | ST_        |              | ST_Example
+PLG        		 | Procedural Graph                    | PLG_       |              | PLG_Example
+Yeni dosya türü bulursanız iletişime geçin. sadik.bal@madbytegames.com
