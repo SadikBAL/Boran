@@ -11,11 +11,11 @@ public class BoranStrategy : ModuleRules
 		PublicIncludePaths.AddRange(
 			new string[] {
 				"BoranStrategy",
-				"BoranStrategy/Character",
 				"BoranStrategy/Controller",
 				"BoranStrategy/GameMode",
 				"BoranStrategy/GameState",
 				"BoranStrategy/HUD",
+				"BoranStrategy/Pawn",
 				"BoranStrategy/PlayerState",
 				"BoranStrategy/Spectator",
 			}

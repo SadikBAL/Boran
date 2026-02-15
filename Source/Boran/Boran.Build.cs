@@ -27,11 +27,11 @@ public class Boran : ModuleRules
 
 		PublicIncludePaths.AddRange(new string[] {
 			"Boran",
-			"Boran/Character",
 			"Boran/Controller",
 			"Boran/GameMode",
 			"Boran/GameState",
 			"Boran/HUD",
+			"Boran/Pawn",
 			"Boran/PlayerState",
 			"Boran/Spectator",
 			

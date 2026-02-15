@@ -2,7 +2,7 @@
 
 #include "BoranGameMode.h"
 
-#include "BoranCharacter.h"
+//#include "BoranCharacter.h"
 #include "BoranGameState.h"
 #include "BoranHUD.h"
 #include "BoranPlayerController.h"
@@ -11,7 +11,7 @@
 
 ABoranGameMode::ABoranGameMode()
 {
-	DefaultPawnClass = ABoranCharacter::StaticClass();
+	//DefaultPawnClass = ABoranCharacter::StaticClass();
 	PlayerControllerClass = ABoranPlayerController::StaticClass();
 	PlayerStateClass = ABoranPlayerState::StaticClass();
 	GameStateClass = ABoranGameState::StaticClass();
