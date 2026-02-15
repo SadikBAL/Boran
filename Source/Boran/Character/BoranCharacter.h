@@ -10,7 +10,7 @@
  *  A controllable top-down perspective character
  */
 UCLASS(abstract)
-class ABoranCharacter : public ACharacter
+class BORAN_API ABoranCharacter : public ACharacter
 {
 	GENERATED_BODY()
 

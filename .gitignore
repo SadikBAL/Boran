@@ -13,3 +13,6 @@
 *.v2
 *.vsidx
 *.ipch
+
+/Plugins/BoranStrategy/Binaries/*
+/Plugins/BoranStrategy/Intermediate/*

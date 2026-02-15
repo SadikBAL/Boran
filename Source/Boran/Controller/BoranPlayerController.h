@@ -18,7 +18,7 @@ DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
  *  Implements point and click based controls
  */
 UCLASS(abstract)
-class ABoranPlayerController : public APlayerController
+class BORAN_API ABoranPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
