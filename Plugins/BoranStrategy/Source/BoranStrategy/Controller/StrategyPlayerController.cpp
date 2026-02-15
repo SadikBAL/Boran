@@ -13,8 +13,9 @@
 #include "StrategyHUD.h"
 #include "Engine/CollisionProfile.h"
 #include "Kismet/GameplayStatics.h"
-#include "StrategyUnit.h"
+#include "StrategyCharacter.h"
 #include "NavigationSystem.h"
+#include "BoranStrategy/Pawn/StrategyPawn.h"
 #include "Engine/OverlapResult.h"
 
 AStrategyPlayerController::AStrategyPlayerController()
@@ -107,7 +108,7 @@ void AStrategyPlayerController::OnPossess(APawn* InPawn)
 	check(StrategyHUD);
 }
 
-void AStrategyPlayerController::DragSelectUnits(const TArray<AStrategyUnit*>& Units)
+void AStrategyPlayerController::DragSelectUnits(const TArray<AStrategyCharacter*>& Units)
 {
 	// do we have units in the list?
 	if (Units.Num() > 0)
@@ -116,7 +117,7 @@ void AStrategyPlayerController::DragSelectUnits(const TArray<AStrategyUnit*>& Un
 		DoDeselectAllCommand();
 
 		// select each new unit
-		for (AStrategyUnit* CurrentUnit : Units)
+		for (AStrategyCharacter* CurrentUnit : Units)
 		{
 			// add the unit to the selection list
 			ControlledUnits.Add(CurrentUnit);
@@ -127,7 +128,7 @@ void AStrategyPlayerController::DragSelectUnits(const TArray<AStrategyUnit*>& Un
 	}
 }
 
-const TArray<AStrategyUnit*>& AStrategyPlayerController::GetSelectedUnits()
+const TArray<AStrategyCharacter*>& AStrategyPlayerController::GetSelectedUnits()
 {
 	return ControlledUnits;
 }
@@ -376,7 +377,7 @@ void AStrategyPlayerController::DoSelectionCommand()
 	{
 
 		// update the target unit
-		TargetUnit = Cast<AStrategyUnit>(OutHit.GetActor());
+		TargetUnit = Cast<AStrategyCharacter>(OutHit.GetActor());
 
 		if (TargetUnit)
 		{
@@ -431,13 +432,13 @@ void AStrategyPlayerController::DoSelectAllOnScreenCommand()
 
 	// find all NPCs currently on screen
 	TArray<AActor*> FoundActors;
-	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AStrategyUnit::StaticClass(), FoundActors);
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AStrategyCharacter::StaticClass(), FoundActors);
 
 	// process each actor found
 	for (AActor* CurrentActor : FoundActors)
 	{
 		// cast back to our unit class
-		if (AStrategyUnit* CurrentUnit = Cast<AStrategyUnit>(CurrentActor))
+		if (AStrategyCharacter* CurrentUnit = Cast<AStrategyCharacter>(CurrentActor))
 		{
 			// has the actor been recently rendered?
 			if (CurrentActor->WasRecentlyRendered(0.2f))
@@ -462,7 +463,7 @@ void AStrategyPlayerController::DoDeselectAllCommand()
 {
 
 	// tell each controlled unit it's been deselected
-	for (AStrategyUnit* CurrentUnit : ControlledUnits)
+	for (AStrategyCharacter* CurrentUnit : ControlledUnits)
 	{
 		// ensure the unit hasn't been destroyed
 		if (IsValid(CurrentUnit))
@@ -529,13 +530,13 @@ void AStrategyPlayerController::DoMoveUnitsCommand()
 	}
 
 	// get the closest selected unit to the move goal. This will be our lead unit
-	AStrategyUnit* Closest = GetClosestSelectedUnitToLocation(CurrentMoveGoal);
+	AStrategyCharacter* Closest = GetClosestSelectedUnitToLocation(CurrentMoveGoal);
 
 	// this will be set to true if any of the move requests fail
 	bool bInteractionFailed = false;
 
 	// process each unit in the controlled list
-	for (AStrategyUnit* CurrentUnit : ControlledUnits)
+	for (AStrategyCharacter* CurrentUnit : ControlledUnits)
 	{
 		if (IsValid(CurrentUnit))
 		{
@@ -570,7 +571,7 @@ void AStrategyPlayerController::DoMoveUnitsCommand()
 
 }
 
-void AStrategyPlayerController::OnMoveCompleted(AStrategyUnit* MovedUnit)
+void AStrategyPlayerController::OnMoveCompleted(AStrategyCharacter* MovedUnit)
 {
 	// is the unit valid?
 	if (IsValid(MovedUnit))
@@ -604,7 +605,7 @@ void AStrategyPlayerController::OnMoveCompleted(AStrategyUnit* MovedUnit)
 
 			QueryParams.AddIgnoredActor(MovedUnit);
 
-			for(const AStrategyUnit* CurSelected : ControlledUnits)
+			for(const AStrategyCharacter* CurSelected : ControlledUnits)
 			{
 				QueryParams.AddIgnoredActor(CurSelected);
 			}
@@ -613,7 +614,7 @@ void AStrategyPlayerController::OnMoveCompleted(AStrategyUnit* MovedUnit)
 			{
 				for (const FOverlapResult& CurrentOverlap : OutOverlaps)
 				{
-					if (AStrategyUnit* CurrentUnit = Cast<AStrategyUnit>(CurrentOverlap.GetActor()))
+					if (AStrategyCharacter* CurrentUnit = Cast<AStrategyCharacter>(CurrentOverlap.GetActor()))
 					{
 						CurrentUnit->Interact(MovedUnit);
 					}
@@ -623,14 +624,14 @@ void AStrategyPlayerController::OnMoveCompleted(AStrategyUnit* MovedUnit)
 	}
 }
 
-AStrategyUnit* AStrategyPlayerController::GetClosestSelectedUnitToLocation(FVector TargetLocation)
+AStrategyCharacter* AStrategyPlayerController::GetClosestSelectedUnitToLocation(FVector TargetLocation)
 {
 	// closest unit and distance
-	AStrategyUnit* OutUnit = nullptr;
+	AStrategyCharacter* OutUnit = nullptr;
 	float Closest = 0.0f;
 
 	// process each unit on the list
-	for (AStrategyUnit* CurrentUnit : ControlledUnits)
+	for (AStrategyCharacter* CurrentUnit : ControlledUnits)
 	{
 		if (CurrentUnit != nullptr)
 		{

@@ -34,9 +34,6 @@ public class Boran : ModuleRules
 			"Boran/PlayerState",
 			"Boran/Spectator",
 			"Boran/UserInterface",
-			
-			"Boran/Variant_Strategy",
-			"Boran/Variant_Strategy/UI",
 		});
 	}
 }

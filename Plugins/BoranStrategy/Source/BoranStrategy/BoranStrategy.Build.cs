@@ -10,21 +10,18 @@ public class BoranStrategy : ModuleRules
 		
 		PublicIncludePaths.AddRange(
 			new string[] {
-				"BoranStrategy",
-				"BoranStrategy/Controller",
-				"BoranStrategy/GameMode",
-				"BoranStrategy/GameState",
-				"BoranStrategy/Pawn",
-				"BoranStrategy/PlayerState",
-				"BoranStrategy/Spectator",
-				"BoranStrategy/UserInterface",
+				ModuleDirectory,
+				ModuleDirectory + "/Controller",
+				ModuleDirectory + "/GameMode",
+				ModuleDirectory + "/Pawn",
+				ModuleDirectory + "/UserInterface",
 			}
 			);
 				
 		
 		PrivateIncludePaths.AddRange(
 			new string[] {
-				// ... add other private include paths required here ...
+				
 			}
 			);
 			
@@ -33,7 +30,12 @@ public class BoranStrategy : ModuleRules
 			new string[]
 			{
 				"Core",
-				"Boran",
+				"InputCore",
+				"EnhancedInput",
+				"UMG",
+				"AIModule",
+				"NavigationSystem",
+				"Boran"
 			}
 			);
 			
@@ -45,7 +47,6 @@ public class BoranStrategy : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
-				// ... add private dependencies that you statically link with here ...	
 			}
 			);
 		

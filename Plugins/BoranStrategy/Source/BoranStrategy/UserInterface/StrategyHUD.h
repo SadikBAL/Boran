@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "BoranHUD.h"
 #include "GameFramework/HUD.h"
 #include "StrategyHUD.generated.h"
 
@@ -13,7 +14,7 @@ class UStrategyUI;
  *  Draws the selection box and unit selected overlays
  */
 UCLASS(abstract)
-class AStrategyHUD : public AHUD
+class AStrategyHUD : public ABoranHUD
 {
 	GENERATED_BODY()
 	

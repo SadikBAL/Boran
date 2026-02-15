@@ -6,19 +6,19 @@
 #include "GameFramework/Character.h"
 #include "AIController.h"
 #include "BoranCharacter.h"
-#include "StrategyUnit.generated.h"
+#include "StrategyCharacter.generated.h"
 
 class USphereComponent;
 
 /** Delegate to report that this unit has finished moving */
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUnitMoveCompletedDelegate, AStrategyUnit*, Unit);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUnitMoveCompletedDelegate, AStrategyCharacter*, Unit);
 
 /**
  *  A simple strategy game unit
  *  Rather than react to inputs, it's controlled indirectly by the Strategy Player Controller
  */
 UCLASS(abstract)
-class AStrategyUnit : public ABoranCharacter
+class AStrategyCharacter : public ABoranCharacter
 {
 	GENERATED_BODY()
 
@@ -36,7 +36,7 @@ protected:
 public:
 
 	/** Constructor */
-	AStrategyUnit();
+	AStrategyCharacter();
 
 protected:
 
@@ -54,7 +54,7 @@ public:
 	void UnitDeselected();
 
 	/** Notifies this unit that it's been interacted with by another actor */
-	void Interact(AStrategyUnit* Interactor);
+	void Interact(AStrategyCharacter* Interactor);
 
 	/** Attempts to move this unit to its */
 	bool MoveToLocation(const FVector& Location, float AcceptanceRadius);
@@ -76,7 +76,7 @@ protected:
 
 	/** Blueprint handler for strategy game interactions */
 	UFUNCTION(BlueprintImplementableEvent, Category="NPC", meta = (DisplayName="Interaction Behavior"))
-	void BP_InteractionBehavior(AStrategyUnit* Interactor);
+	void BP_InteractionBehavior(AStrategyCharacter* Interactor);
 
 public:
 

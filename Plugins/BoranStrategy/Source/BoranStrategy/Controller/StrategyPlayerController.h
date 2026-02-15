@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "BoranPlayerController.h"
 #include "GameFramework/PlayerController.h"
 #include "StrategyPlayerController.generated.h"
 
@@ -28,7 +29,7 @@ enum EStrategyInputMode : uint8
  *  Implements both mouse and touch controls.
  */
 UCLASS(abstract)
-class AStrategyPlayerController : public APlayerController
+class AStrategyPlayerController : public ABoranPlayerController
 {
 	GENERATED_BODY()
 
@@ -165,10 +166,10 @@ protected:
 	TEnumAsByte<ETraceTypeQuery> SelectionTraceChannel;
 
 	/** Currently selected unit */
-	AStrategyUnit* TargetUnit = nullptr;
+	AStrategyCharacter* TargetUnit = nullptr;
 
 	/** Currently selected unit list */
-	TArray<AStrategyUnit*> ControlledUnits;
+	TArray<AStrategyCharacter*> ControlledUnits;
 
 public:
 
@@ -184,10 +185,10 @@ public:
 public:
 
 	/** Updates selected units from the HUD's drag select box */
-	void DragSelectUnits(const TArray<AStrategyUnit*>& Units);
+	void DragSelectUnits(const TArray<AStrategyCharacter*>& Units);
 
 	/** Passes the list of selected units */
-	const TArray<AStrategyUnit*>& GetSelectedUnits();
+	const TArray<AStrategyCharacter*>& GetSelectedUnits();
 
 protected:
 
@@ -265,10 +266,10 @@ protected:
 
 	/** Called when a unit move is completed */
 	UFUNCTION()
-	void OnMoveCompleted(AStrategyUnit* MovedUnit);
+	void OnMoveCompleted(AStrategyCharacter* MovedUnit);
 
 	/** Sorts all controlled units based on their distance to the provided world location */
-	AStrategyUnit* GetClosestSelectedUnitToLocation(FVector TargetLocation);
+	AStrategyCharacter* GetClosestSelectedUnitToLocation(FVector TargetLocation);
 
 	/** Calculates and returns the current mouse location */
 	FVector2D GetMouseLocation();

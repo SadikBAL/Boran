@@ -2,7 +2,7 @@
 
 
 #include "StrategyHUD.h"
-#include "StrategyUnit.h"
+#include "StrategyCharacter.h"
 #include "StrategyPlayerController.h"
 #include "StrategyUI.h"
 
@@ -42,7 +42,7 @@ void AStrategyHUD::DrawHUD()
 			DrawRect(SelectionBoxColor, BoxStart.X, BoxStart.Y, BoxSize.X, BoxSize.Y);
 
 			// get all the units in the selection box
-			TArray<AStrategyUnit*> BoxedUnits;
+			TArray<AStrategyCharacter*> BoxedUnits;
 			GetActorsInSelectionRectangle(BoxStart, BoxCurrentPosition, BoxedUnits, true);
 
 			// update the unit selection on the player controller
@@ -50,13 +50,13 @@ void AStrategyHUD::DrawHUD()
 		}
 
 		// get the currently selected units
-		TArray<AStrategyUnit*> SelectedUnits = PC->GetSelectedUnits();
+		TArray<AStrategyCharacter*> SelectedUnits = PC->GetSelectedUnits();
 
 		// update the selection count on the UI widget
 		UIWidget->SetSelectedUnitsCount(SelectedUnits.Num());
 
 		// process each selected unit
-		for (AStrategyUnit* CurrentUnit : SelectedUnits)
+		for (AStrategyCharacter* CurrentUnit : SelectedUnits)
 		{
 			if (IsValid(CurrentUnit))
 			{

@@ -1,14 +1,14 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 
-#include "StrategyUnit.h"
+#include "StrategyCharacter.h"
 #include "AIController.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Components/SphereComponent.h"
 #include "Navigation/PathFollowingComponent.h"
 
-AStrategyUnit::AStrategyUnit()
+AStrategyCharacter::AStrategyCharacter()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
@@ -39,7 +39,7 @@ AStrategyUnit::AStrategyUnit()
 	GetCharacterMovement()->SetFixedBrakingDistance(true);
 }
 
-void AStrategyUnit::NotifyControllerChanged()
+void AStrategyCharacter::NotifyControllerChanged()
 {
 	// validate and save a copy of the AI controller reference
 	AIController = Cast<AAIController>(Controller);
@@ -50,30 +50,30 @@ void AStrategyUnit::NotifyControllerChanged()
 		UPathFollowingComponent* PFComp = AIController->GetPathFollowingComponent();
 		if (PFComp)
 		{
-			PFComp->OnRequestFinished.AddUObject(this, &AStrategyUnit::OnMoveFinished);
+			PFComp->OnRequestFinished.AddUObject(this, &AStrategyCharacter::OnMoveFinished);
 		}
 	}
 }
 
-void AStrategyUnit::StopMoving()
+void AStrategyCharacter::StopMoving()
 {
 	// use the character movement component to stop movement
 	GetCharacterMovement()->StopMovementImmediately();
 }
 
-void AStrategyUnit::UnitSelected()
+void AStrategyCharacter::UnitSelected()
 {
 	// pass control to BP
 	BP_UnitSelected();
 }
 
-void AStrategyUnit::UnitDeselected()
+void AStrategyCharacter::UnitDeselected()
 {
 	// pass control to BP
 	BP_UnitDeselected();
 }
 
-void AStrategyUnit::Interact(AStrategyUnit* Interactor)
+void AStrategyCharacter::Interact(AStrategyCharacter* Interactor)
 {
 	// ensure the interactor is valid
 	if (IsValid(Interactor))
@@ -90,7 +90,7 @@ void AStrategyUnit::Interact(AStrategyUnit* Interactor)
 	
 }
 
-bool AStrategyUnit::MoveToLocation(const FVector& Location, float AcceptanceRadius)
+bool AStrategyCharacter::MoveToLocation(const FVector& Location, float AcceptanceRadius)
 {
 	// ensure we have a valid AI Controller
 	if (AIController)
@@ -139,7 +139,7 @@ bool AStrategyUnit::MoveToLocation(const FVector& Location, float AcceptanceRadi
 	return false;
 }
 
-void AStrategyUnit::OnMoveFinished(FAIRequestID RequestID, const FPathFollowingResult& Result)
+void AStrategyCharacter::OnMoveFinished(FAIRequestID RequestID, const FPathFollowingResult& Result)
 {
 	// call the delegate
 	OnMoveCompleted.Broadcast(this);

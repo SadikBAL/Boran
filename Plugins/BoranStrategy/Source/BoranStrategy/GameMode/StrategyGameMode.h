@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "BoranGameMode.h"
 #include "GameFramework/GameModeBase.h"
 #include "StrategyGameMode.generated.h"
 
@@ -10,7 +11,7 @@
  *  Simple GameMode for a top down strategy game.
  */
 UCLASS(abstract)
-class AStrategyGameMode : public AGameModeBase
+class AStrategyGameMode : public ABoranGameMode
 {
 	GENERATED_BODY()
 	
