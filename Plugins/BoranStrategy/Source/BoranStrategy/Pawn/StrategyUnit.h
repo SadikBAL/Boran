@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "AIController.h"
+#include "BoranCharacter.h"
 #include "StrategyUnit.generated.h"
 
 class USphereComponent;
@@ -17,7 +18,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUnitMoveCompletedDelegate, AStrat
  *  Rather than react to inputs, it's controlled indirectly by the Strategy Player Controller
  */
 UCLASS(abstract)
-class AStrategyUnit : public ACharacter
+class AStrategyUnit : public ABoranCharacter
 {
 	GENERATED_BODY()
 

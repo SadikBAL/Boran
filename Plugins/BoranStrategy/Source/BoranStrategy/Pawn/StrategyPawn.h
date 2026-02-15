@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "BoranPawn.h"
 #include "GameFramework/Pawn.h"
 #include "StrategyPawn.generated.h"
 
@@ -14,7 +15,7 @@ class UFloatingPawnMovement;
  *  Units are indirectly controlled by other means.
  */
 UCLASS(abstract)
-class AStrategyPawn : public APawn
+class AStrategyPawn : public ABoranPawn
 {
 	GENERATED_BODY()
 
