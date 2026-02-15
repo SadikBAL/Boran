@@ -30,10 +30,10 @@ public class Boran : ModuleRules
 			"Boran/Controller",
 			"Boran/GameMode",
 			"Boran/GameState",
-			"Boran/HUD",
 			"Boran/Pawn",
 			"Boran/PlayerState",
 			"Boran/Spectator",
+			"Boran/UserInterface",
 			
 			"Boran/Variant_Strategy",
 			"Boran/Variant_Strategy/UI",

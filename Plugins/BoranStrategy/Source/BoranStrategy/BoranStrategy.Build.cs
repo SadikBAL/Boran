@@ -14,10 +14,10 @@ public class BoranStrategy : ModuleRules
 				"BoranStrategy/Controller",
 				"BoranStrategy/GameMode",
 				"BoranStrategy/GameState",
-				"BoranStrategy/HUD",
 				"BoranStrategy/Pawn",
 				"BoranStrategy/PlayerState",
 				"BoranStrategy/Spectator",
+				"BoranStrategy/UserInterface",
 			}
 			);
 				
